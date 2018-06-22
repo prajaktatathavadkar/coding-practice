@@ -21,6 +21,7 @@ public class ReverseWords {
         process(input4);
     }
 
+    // O(n) time O(1) space
     private static void process(String input) {
 
         if(input == null || input.isEmpty()) {
