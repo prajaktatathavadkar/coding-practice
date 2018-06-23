@@ -1,5 +1,8 @@
 package com.programcreek.algorithms.array;
 
+/**
+ * @author ptathavadkar
+ */
 public class RotateArray {
 
     public static void main(String args[]) {

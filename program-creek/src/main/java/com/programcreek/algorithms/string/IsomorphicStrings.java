@@ -2,6 +2,9 @@ package com.programcreek.algorithms.string;
 
 import java.util.HashMap;
 
+/**
+ * @author ptathavadkar
+ */
 public class IsomorphicStrings {
 
     public static void main(String[] args) {
