@@ -36,8 +36,11 @@ public class IsomorphicStrings {
     // O(n) time O(n) space
     private static void process(String input1, String input2) {
 
-        System.out.println("Are " + input1 + " and " + input2 + " isomorphic? "
-                + areIsomorphic(input1, input2));
+        StringBuilder sb = new StringBuilder()
+                .append("Are ").append(input1)
+                .append(" and ").append(input2)
+                .append(" isomorphic ").append(areIsomorphic(input1, input2));
+        System.out.println(sb.toString());
     }
 
     private static boolean areIsomorphic(String input1, String input2) {
