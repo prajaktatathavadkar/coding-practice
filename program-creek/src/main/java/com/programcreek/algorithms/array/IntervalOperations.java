@@ -80,7 +80,7 @@ public class IntervalOperations {
         insert(intervals, new Interval(4,9));
     }
 
-    // O(nlogn) time O(n) space 
+    // O(nlogn) time O(n) space
     private static void insert(ArrayList<Interval> intervals, Interval newInterval) {
 
         // validate
