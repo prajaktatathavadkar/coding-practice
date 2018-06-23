@@ -14,13 +14,17 @@ public class BinaryTreeDemo {
         bt.add(7);
         bt.add(9);
 
-        // Depth First Search
+        // Depth First Traversal
         bt.printPreOrder();
         bt.printInOrder();
         bt.printPostOrder();
 
-        // Breadth First Search
+        // Breadth First Traversal
         bt.printBFS();
+
+        // Level Order Traversal
+        bt.printLevelOrder();
+        bt.printLevelOrderReverse();
 
     }
 }
