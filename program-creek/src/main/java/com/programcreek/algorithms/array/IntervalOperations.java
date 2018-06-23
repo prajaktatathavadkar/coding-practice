@@ -6,7 +6,7 @@ import java.util.PriorityQueue;
 /**
  * @author ptathavadkar
  */
-public class MergeIntervals {
+public class IntervalOperations {
 
     private static IntervalComparator intervalComparator = new IntervalComparator();
 
@@ -20,11 +20,11 @@ public class MergeIntervals {
             add(new Interval(15, 18));
             add(new Interval(-1, 2));
         }};
-        process(intervals);
+        merge(intervals);
 
         // test case 2
         intervals = null;
-        process(intervals);
+        merge(intervals);
 
         // test case 3
         intervals = new ArrayList<Interval>() {{
@@ -33,7 +33,7 @@ public class MergeIntervals {
             add(new Interval(6, 7));
             add(new Interval(8, 9));
         }};
-        process(intervals);
+        merge(intervals);
 
         // test case 4
         intervals = new ArrayList<Interval>() {{
@@ -43,7 +43,7 @@ public class MergeIntervals {
             add(new Interval(5, 6));
             add(new Interval(6, 8));
         }};
-        process(intervals);
+        merge(intervals);
 
         // test case 5
         intervals = new ArrayList<Interval>() {{
@@ -53,11 +53,50 @@ public class MergeIntervals {
             add(new Interval(1, 6));
             add(new Interval(6, 8));
         }};
-        process(intervals);
+        merge(intervals);
+
+        // test case 6
+        intervals = new ArrayList<Interval>() {{
+            add(new Interval(1, 3));
+            add(new Interval(1, 4));
+            add(new Interval(4, 5));
+            add(new Interval(1, 6));
+            add(new Interval(6, 8));
+        }};
+        insert(intervals, null);
+
+        // test case 7
+        insert(null, null);
+
+        // test case 8
+        intervals = new ArrayList<Interval>() {{
+            add(new Interval(1, 2));
+            add(new Interval(3, 5));
+            add(new Interval(6, 7));
+            add(new Interval(8, 10));
+            add(new Interval(12, 16));
+        }};
+
+        insert(intervals, new Interval(4,9));
     }
 
-    // O(nlogn) + O()  time O(n) space
-    private static void process(ArrayList<Interval> intervals) {
+    // O(nlogn) time O(n) space 
+    private static void insert(ArrayList<Interval> intervals, Interval newInterval) {
+
+        // validate
+        if(intervals == null || newInterval == null) {
+            System.out.println("Invalid input");
+            return;
+        }
+
+        // insert and merge intervals
+        intervals.add(newInterval);
+        merge(intervals);
+
+    }
+
+    // O(nlogn) time O(n) space
+    private static void merge(ArrayList<Interval> intervals) {
 
         // validate
         if (intervals == null || intervals.size() == 0) {
