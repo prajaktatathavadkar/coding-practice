@@ -23,19 +23,18 @@ public class Calendar {
     // O(log(n)) time O(n) space
     public boolean book(Date start, Date end) {
 
+        // validations
         if(start == null || end == null) {
 
             System.out.println("Start/End of meeting cannot be null");
             return false;
-        }
 
-        if(end.before(start) || end.equals(start)) {
+        } else if(end.before(start) || end.equals(start)) {
 
             System.out.println("End of meeting should be after start");
             return false;
-        }
 
-        if(end.before(new Date(System.currentTimeMillis()))
+        } else if(end.before(new Date(System.currentTimeMillis()))
                 || start.before(new Date(System.currentTimeMillis()))) {
 
             System.out.println("Cannot book meeting in the past");
