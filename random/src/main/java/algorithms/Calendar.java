@@ -23,6 +23,12 @@ public class Calendar {
     // O(log(n)) time O(n) space
     public boolean book(Date start, Date end) {
 
+        if(start == null || end == null) {
+
+            System.out.println("Start/End of meeting cannot be null");
+            return false;
+        }
+
         if(end.before(start) || end.equals(start)) {
 
             System.out.println("End of meeting should be after start");
