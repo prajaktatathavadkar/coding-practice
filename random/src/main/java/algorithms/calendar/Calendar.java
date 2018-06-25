@@ -1,4 +1,4 @@
-package algorithms;
+package algorithms.calendar;
 
 import java.util.Comparator;
 import java.util.Date;
